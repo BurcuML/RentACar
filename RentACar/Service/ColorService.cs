@@ -14,17 +14,16 @@ namespace RentACar.Service
         public void Add(Car car)
         {
             carData.Add(car);
-            Console.WriteLine("Araba eklendide bu ödev biraz uzun değilmi!!!! ");
         }
         public void GetById(int id)
         {
             Car? car = carData.GetById(id);
             if (car is null)
             {
-                Console.WriteLine($"Aradığınız Id ye göre ARABA bulunamadı :{id}");
+                Console.WriteLine($"Aradığınız Id ye göre araba bulunamadı :{id}");
                 return;
             }
-            Console.WriteLine($"Seçilen ARABA id si: {id}");
+            Console.WriteLine($"Seçilen araba id si: {id}");
             Console.WriteLine(car);
         }
         public void Delete(int id)
@@ -32,10 +31,10 @@ namespace RentACar.Service
             Car? car = carData.Delete(id);
             if (car is null)
             {
-                Console.WriteLine($"ARABA Bulunamadı : Id= {id}");
+                Console.WriteLine($"Araba Bulunamadı : Id= {id}");
                 return;
             }
-            Console.WriteLine("ARABA  Silindi.");
+            Console.WriteLine("Araba  Silindi.");
             Console.WriteLine(car);
         }
         public void GetAll()
@@ -49,10 +48,10 @@ namespace RentACar.Service
             Car? car = carData.Update(id, updatedCar);
             if (car is null)
             {
-                Console.WriteLine($"Güncellemek istediğiniz ARABA bulunamadı: Id= {id}");
+                Console.WriteLine($"Güncellemek istediğiniz araba bulunamadı: Id= {id}");
                 return;
             }
-            Console.WriteLine("ARABA güncellendi.");
+            Console.WriteLine("Araba güncellendi.");
             Console.WriteLine(car);
         }
     }
