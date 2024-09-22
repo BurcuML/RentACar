@@ -14,7 +14,6 @@ namespace RentACar.Service
         public void Add(Car car)
         {
             carData.Add(car);
-            Console.WriteLine("Araba eklendide bu ödev biraz uzun değilmi!!!! ");
         }
         public void GetById(int id)
         {
