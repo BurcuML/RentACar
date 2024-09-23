@@ -8,51 +8,51 @@ using System.Threading.Tasks;
 
 namespace RentACar.Service
 {
-    internal class ColorService
+    public class ColorService
     {
-        private CarData carData = new CarData();
-        public void Add(Car car)
+        private ColorData colorData = new ColorData();
+        public void Add(Color color)
         {
-            carData.Add(car);
+            colorData.Add(color);
         }
         public void GetById(int id)
         {
-            Car? car = carData.GetById(id);
-            if (car is null)
+            Color? color = colorData.GetById(id);
+            if (color is null)
             {
                 Console.WriteLine($"Aradığınız Id ye göre araba bulunamadı :{id}");
                 return;
             }
             Console.WriteLine($"Seçilen araba id si: {id}");
-            Console.WriteLine(car);
+            Console.WriteLine(color);
         }
         public void Delete(int id)
         {
-            Car? car = carData.Delete(id);
-            if (car is null)
+            Color? color = colorData.Delete(id);
+            if (color is null)
             {
                 Console.WriteLine($"Araba Bulunamadı : Id= {id}");
                 return;
             }
             Console.WriteLine("Araba  Silindi.");
-            Console.WriteLine(car);
+            Console.WriteLine(color);
         }
         public void GetAll()
         {
-            List<Car> cars = carData.GetAllCars();
-            cars.ForEach(x => Console.WriteLine(x));
+            List<Color> colors = colorData.GetAllColors();
+            colors.ForEach(x => Console.WriteLine(x));
         }
 
-        public void Update(int id, Car updatedCar)
+        public void Update(int id, Car uColor)
         {
-            Car? car = carData.Update(id, updatedCar);
-            if (car is null)
+            Color? color = colorData.Update(id, uColor);
+            if (color is null)
             {
                 Console.WriteLine($"Güncellemek istediğiniz araba bulunamadı: Id= {id}");
                 return;
             }
             Console.WriteLine("Araba güncellendi.");
-            Console.WriteLine(car);
+            Console.WriteLine(color);
         }
     }
 }
