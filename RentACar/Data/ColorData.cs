@@ -19,7 +19,7 @@ namespace RentACar.Data
             return color;
         }
 
-        public List<Color> GetAllCars() {
+        public List<Color> GetAll() {
             return color; }
 
         public Color GetById(int id)
