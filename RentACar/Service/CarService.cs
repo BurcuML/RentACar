@@ -43,15 +43,15 @@ namespace RentACar.Service
             cars.ForEach(x => Console.WriteLine(x));
         }
 
-        public void Update(int id, Car updatedCar)
+        public void Update(int id, Car update)
         {
-            Car? car = carData.Update(id, updatedCar);
+            Car? car = carData.Update(id, update);
             if (car is null)
             {
-                Console.WriteLine($"Güncellemek istediğiniz Araba bulunamadı: Id= {id}");
+                Console.WriteLine($"Güncellemek istediğiniz id'ye göre araba bulunamadı: Id= {id}");
                 return;
             }
-            Console.WriteLine("Araba güncellendi.");
+            Console.WriteLine("Id güncellendi.");
             Console.WriteLine(car);
         }
 
