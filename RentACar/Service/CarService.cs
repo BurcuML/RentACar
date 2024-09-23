@@ -54,6 +54,17 @@ namespace RentACar.Service
             Console.WriteLine("Id güncellendi.");
             Console.WriteLine(car);
         }
+        public void GetAllDetailsByBrandNameContains(string brandName)
+        {
+
+            List<Color> colors = colorData.GetAll();
+            List<Fuel> fuels = fuelData.GetAll();
+            List<Transmission> transmissions = transmissionData.GetAll();
+
+
+            List<CarDetailDTO> carDetailDTOs = carData.GetAllDetailsByBrandNameContains(colors, fuels, transmissions, brandName);
+            carDetailDTOs.ForEach(x => Console.WriteLine(x));
+        }
 
     }
 }
