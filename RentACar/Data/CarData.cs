@@ -48,7 +48,7 @@ namespace RentACar.Data
 
         }
 
-        public Car Update(int id)
+        public Car Update(int id, Car car)
         {
             Car? car = GetById(id);
 
