@@ -48,25 +48,25 @@ namespace RentACar.Data
 
         }
 
-        public Car Update(int id, Car car)
+        public Car Update(int id, Car uCar)
         {
             Car? car = GetById(id);
 
             if (car is not null)
             {
                 car = new Car(
-    id: updatedCar.Id,
-    colorId: updatedCar.ColorId,
-    fuelId: updatedCar.FuelId,
-    transmissionId: updatedCar.TransmissionId,
-    carState: updatedCar.CarState,
-    kiloMeter: updatedCar.KiloMeter,
-    modelYear: updatedCar.ModelYear,
-    plate: updatedCar.Plate,
-    brandName: updatedCar.BrandName,
-    modelName: updatedCar.ModelName,
-    modelName: updatedCar.ModelName,
-    dailyPrice: updatedCar.DailyPrice
+    id: uCar.Id,
+    colorId: uCar.ColorId,
+    fuelId: uCar.FuelId,
+    transmissionId: uCar.TransmissionId,
+    carState: uCar.CarState,
+    kiloMeter: uCar.KiloMeter,
+    modelYear: uCar.ModelYear,
+    plate: uCar.Plate,
+    brandName: uCar.BrandName,
+    modelName: uCar.ModelName,
+    modelName: uCar.ModelName,
+    dailyPrice: uCar.DailyPrice
     );
             }
 
