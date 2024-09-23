@@ -19,7 +19,7 @@ namespace RentACar.Data
             return fuel;
         }
 
-        public List<Fuel> GetAllCars() {
+        public List<Fuel> GetAll() {
             return fuels; }
 
         public Fuel GetById(int id)
