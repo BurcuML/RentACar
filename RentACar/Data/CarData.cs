@@ -97,6 +97,29 @@ namespace RentACar.Data
 
             return result.ToList();
         }
+        public List<CarDetailDTO> GetAllDetailsByBrandNameContains(List<Color> colors, List<Fuel> fuels, List<Transmission> transmissions, string brandName)
+    {
+        var result = from c in cars
+                     join co in colors on c.ColorId equals co.Id
+                     join fu in fuels on c.FuelId equals fu.Id
+                     join trm in transmissions on c.TransmissionId equals trm.Id
+                     where c.BrandName.Contains(brandName)
+                     select new CarDetailDTO(
+                         c.Id,
+                         fu.Name,
+                         trm.Name,
+                         co.Name,
+                         c.CarState,
+                         c.KiloMeter,
+                         c.ModelYear,
+                         c.Plate,
+                         c.BrandName,
+                         c.ModelName,
+                         c.DailyPrice
+                     );
+
+        return result.ToList();
+        }
 
     }
 }
